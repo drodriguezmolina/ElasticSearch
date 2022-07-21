@@ -11,15 +11,13 @@ Bulk instance
 
 ```markdown
 $bulk = [ 'body' => [], ];
+$results = [] // DATA TO INDEX
 
 foreach ($results as $key => $result) {
-    $result['RESULTID'] = $result['BASTIDOR'] . $result['TESTSTART'] . $line . $result['BT_VARIANT'];
-    $result['LINE'] = $line;
-
     $bulk['body'][] = [
         'index' => [
-            '_index' => $indexName,
-            '_id' => $key . $line,
+            '_index' => $indexName //INDEX NAME,
+            '_id' => $id // IDENTIFIER,
         ],
     ];
 

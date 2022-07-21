@@ -63,35 +63,35 @@ Multiple query with range and term
 
 ```markdown
 'body' => [
-                'query' => [
-                    'bool' => [
-                        'filter' => [
-                            [
-                                'range' => [
-                                    'TESTSTART' => [
-                                        'gte' => $startTurn->getTimestamp(),
-                                        'lte' => $endTurn->getTimestamp(),
-                                    ],
-                                ],
-                            ],
-                            [
-                                'terms' => [
-                                    'MODEL' => explode(',', $model),
-                                ],
-                            ],
-                            [
-                                'term' => [
-                                    'LINE' => $line,
-                                ],
-                            ],
-                            [
-                                'term' => [
-                                    'CHECKNAME.keyword' => $test,
-                                ],
-                            ],
+    'query' => [
+        'bool' => [
+            'filter' => [
+                [
+                    'range' => [
+                        'TESTSTART' => [
+                            'gte' => $startTurn->getTimestamp(),
+                            'lte' => $endTurn->getTimestamp(),
                         ],
                     ],
                 ],
+                [
+                    'terms' => [
+                        'MODEL' => explode(',', $model),
+                    ],
+                ],
+                [
+                    'term' => [
+                        'LINE' => $line,
+                    ],
+                ],
+                [
+                    'term' => [
+                        'CHECKNAME.keyword' => $test,
+                    ],
+                ],
             ],
+        ],
+    ],
+],
 ```
 

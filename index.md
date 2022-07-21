@@ -48,3 +48,10 @@ if (count($bulk['body']) > 0) {
     }
 }
 ```
+
+### QUERY
+
+MUST -> AND
+SHOULD -> OR
+RANGE -> gt, gte, lt, lte
+
